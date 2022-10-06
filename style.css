@@ -6,7 +6,8 @@
 
 :root{
     --main-color : #FF9900;
-    --shadow: rgba(0, 0, 0, 0.4);
+    --shadow: rgba(0, 0, 0, 0.3 );
+    --box-shadow:rgba(0, 0, 0, 0.5 );
     --secondary-color: #D9D9D9;
     --main-color-50:rgba(255, 153, 0, 0.5);
 }
@@ -17,7 +18,15 @@ body{
     overflow-x: hidden;
 }
 
-
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+body::-webkit-scrollbar-track{
+    background-color: rgb(48, 48, 48);
+}
+body::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
 /***** Multipurpose *****/
 
 .hover-line-item .line{
@@ -26,10 +35,11 @@ body{
     margin-right: 100%;
     height: 5px;
     background-color: var(--main-color);
+
 }
 
 .hover-line-item:hover .line{
-    animation: hover-line 0.9s ease-in-out 0s 1 forwards;
+    animation: hover-line .5s ease-in-out 0s 1 forwards;
 }
 
 
@@ -46,8 +56,7 @@ body{
 }
 
 .section{
-    margin-top:1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -93,7 +102,7 @@ body{
     margin: 1rem;
 }
 
-.section-heading-wrapper .line{
+.section-heading-wrapper > .line{
     margin-right: 1rem;
     width: 5px;
     height: 50px;
@@ -124,7 +133,7 @@ body{
 }
 
 
-.navbar-nav .nav-item:hover:not(.active){
+.navbar-nav .nav-item:hover:not(.active):not(.button){
     text-decoration: underline var(--main-color) 2px; 
     font-weight: 600;
 
@@ -146,23 +155,24 @@ body{
 
 /***** End Navbar *****/
 
-
+/***** Header Carousel *****/
 
 .dropdown-menu{
     border-radius: 0px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.322);
 }
 
-.Header .carousel-item img{
+.testimonials .carousel-inner img ,  .Header .carousel-item img{
     height:360px;
     object-fit: cover;
+    width: 100%;
 }
 
 .carousel-caption {
     text-shadow: 1px 1px 10px black;  
 }
 
-.carousel-indicators{
+.Header .carousel-indicators{
     justify-content: start ;
 }
 
@@ -170,10 +180,7 @@ body{
     width: 10px !important;
     height: 10px !important;
     border-radius: 50%;
-}
-
-
-   
+} 
 
 .carousel-caption {
     right: 0;
@@ -190,12 +197,9 @@ body{
     animation: slideOutDown 1s infinite alternate;
 }
 
+/***** End Header Carousel *****/
 
 /***** Gallery *****/
-
-
-
-
 
 .Gallery .grid.wrapper{
     display: grid;
@@ -214,13 +218,9 @@ body{
     background-position: center;
     background-blend-mode:color;
 }
-
-.grid.wrapper .grid-item .text-wrapper{
-    position: relative;
-    height: max-content;
-    color: white;
-    text-shadow: 1px 1px 10px var(--shadow);
-    z-index: 2;
+.grid.wrapper .grid-item .text-hover-line{
+    margin: auto;
+    color:white;
 }
 
 .grid.wrapper .grid-item:hover{
@@ -231,19 +231,19 @@ body{
 
 .grid.wrapper .grid-item:nth-child(1){
     height: 30rem;
-    background-image: url(./Images/Places/henry-be-MdJq0zFUwrw-unsplash.jpg);
+    background-image: url(./Images/Places/usa-liberty.jpg);
     grid-area: Content1;
 }
 .grid.wrapper .grid-item:nth-child(2){
-    background-image: url(./Images/Places/agustin-diaz-gargiulo-GTLJklnjn-E-unsplash.jpg);
+    background-image: url(./Images/Places/europe-netherlands.jpg);
     grid-area: Content2;
 }
 .grid.wrapper .grid-item:nth-child(3){
-    background-image: url(./Images/Places/luca-bravo-TaCk3NspYe0-unsplash.jpg);
+    background-image: url(./Images/Places/china.jpg);
     grid-area: Content3;
 }
 .grid.wrapper .grid-item:nth-child(4){
-    background-image: url(./Images/Places/syed-bilal-javaid-uc9GjDHj1yA-unsplash.jpg);
+    background-image: url(./Images/Places/egypt-giza.jpg);
     grid-area: Content4;
 }
 
@@ -254,7 +254,7 @@ body{
                              "Content3"
                              "Content4" !important;
     }
-    .grid.wrapper div{
+    .grid.wrapper .grid-item{
         height: 20rem;
     }
 }
@@ -296,18 +296,6 @@ body{
 
 /***** testimonials *****/
 
-.testimonials .card:hover{
-    box-shadow:  1px 1px 10px var(--shadow);
-}
-
-.card{
-    border-radius: 0px;
-}
-
-.testimonials .card:hover .card-title{
-    font-weight: 600;
-
-}
 
 .testimonials .rating-stars{
     color: var(--main-color);
@@ -316,6 +304,45 @@ body{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+.testimonials .carousel-caption h5{
+    padding-inline:10rem;
+    margin: auto;
+    text-align: center;
+    text-shadow: none;
+    color: black;
+    font-weight: lighter;
+}
+.testimonials .carousel-caption h4{
+    color: black;
+    margin: 1rem;
+    font-weight:normal;
+    text-shadow: none;
+}
+.testimonials .carousel-caption .tour-name{
+    color: var(--main-color);
+    margin: 1rem;
+    font-weight:normal;
+}
+@media (max-width:600px) {
+    .testimonials .carousel-caption h5{
+        padding-inline: 1rem;
+    }
+    .testimonials .carousel-caption .tour-name{
+
+        text-shadow: 1px 1px 10px var(--shadow);
+    }
+}
+.testimonials .carousel-inner{
+    background-image: url(./Images/Places/mountains.jpg), linear-gradient(to top, transparent 1%, white 80%); 
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 30rem;
+    background-blend-mode: color;
+    
 }
 
 /***** End testimonials *****/
@@ -340,35 +367,146 @@ body{
 /***** End Qualities *****/
 
 
-/***** Collage *****/
-.collage .image-col{
-    position: relative;
-    width: 30% !important;
+/***** Points *****/
 
-}
-
-
-
-.collage .image-wrapper img{
-    height:40rem;
-    width:inherit;
-}
-
-.collage .sub-image{
-    position: absolute;
-    top: 70%;
-    left: 40%;
-}
-
-
-
-.collage .sub-image img{
+.points .sub-image img{
     width: 20rem;
     height: inherit;
+}
+
+.points .offering-points li{
+    list-style-type:none;   
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.offering-points div{
+    display: flex;
+    flex-direction: row;
+}
+.points .offering-points li:hover{
+    color: var(--main-color);
+}
+.points .offering-points .fa{
+    color: var(--main-color);
+    padding: 1rem ;
+    padding-inline: .5rem;
+    
 
 }
-/***** End Collage *****/  
 
+.points .column-wrapper .grid-item{
+    margin-inline: 2rem;
+    margin: .5rem;
+    padding: 1rem;
+    height: 15rem;
+    width:auto;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.points .column-wrapper .grid-item:hover{
+    box-shadow: 1px 1px 10px var(--box-shadow);
+    background-position: center;
+    background-size: cover;
+}
+.points .column-wrapper .grid-item:nth-child(1){
+    background-image: url(./Images/Places/hiking-mountains.jpg);
+}
+.points .column-wrapper .grid-item:nth-child(2){
+    background-image: url(./Images/Places/urban-city.jpg);
+}
+
+
+/***** End Points  *****/  
+
+/***** Newsletter *****/
+
+.newsletter .email-form{
+    padding:1rem;
+    border: white;
+    border-radius:0px;
+}
+
+.newsletter .button-simple{
+    padding: .5rem;
+}
+
+/***** End Newsletter *****/
+
+/***** carousel-1 *****/
+.owl-one .item{
+    background-color: #FF9900;
+    height: 25rem;
+    margin: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+}
+
+.owl-one .item .text-wrapper{
+    margin: auto 0 ;
+    padding: 1rem;
+}
+
+.owl-one .item:hover{
+    box-shadow: 1px 1px 10px var(--box-shadow);
+}
+
+.owl-one .item:hover  .text-wrapper{
+    margin: auto !important;
+}
+
+.owl-one .item.one{
+    background-image: url(./Images/Places/india-tajmahal.jpg);
+}
+
+.owl-one .item.two{
+    background-image: url(./Images/Places/turkey-hagia-sophia.jpg);
+}
+.owl-one .item.three{
+    background-image: url(./Images/Places/big-ben.jpg);
+}
+.owl-one .item.four{
+    background-image: url(./Images/Places/Hawaii.jpg);
+}
+
+.owl-nav{
+    display: flex;
+    justify-content: center;
+}
+.owl-carousel .owl-nav .owl-prev  , .owl-next{
+    border: 2px solid var(--main-color) !important;
+    margin: 1rem  !important;
+    width: 60px;
+    height: fit-content;
+    padding-bottom: 100px !important;
+    opacity: 0.9 !important;
+    padding: 5rem !important;
+}
+
+.owl-nav span{
+    font-size: 40px;
+    color:var(--main-color);
+} 
+
+
+.owl-next:hover ,.owl-prev:hover{
+    transition: all 50ms ease-in-out;
+    opacity: 1 !important;
+}
+
+.owl-next:active , .owl-prev:active{
+    transform: translate(0px , 1px);
+    box-shadow: none;
+}
+
+
+/***** End carousel-1 *****/
 
 @media screen and (width >= 768px){
     .Header .carousel-item img{
@@ -376,3 +514,4 @@ body{
         object-fit: cover;
     }
 }
+
