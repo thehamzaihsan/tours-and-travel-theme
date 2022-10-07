@@ -37,7 +37,14 @@ body::-webkit-scrollbar-thumb{
     background-color: var(--main-color);
 
 }
+.text-hover-line{
+    text-shadow: 1px 1px 10px black;
+    cursor: pointer;
+}
 
+.hover-line-item:hover .text-hover-line{
+    text-shadow: none !important;
+}
 .hover-line-item:hover .line{
     animation: hover-line .5s ease-in-out 0s 1 forwards;
 }
@@ -107,6 +114,11 @@ body::-webkit-scrollbar-thumb{
     width: 5px;
     height: 50px;
     background-color: var(--main-color);
+
+}
+.section-heading-wrapper{
+    padding-left: 0px;
+    margin-left: 0px;
 }
 
 /***** End Multipurpose *****/
@@ -127,6 +139,10 @@ body::-webkit-scrollbar-thumb{
 /***** End Banner *****/
 
 /***** Navbar *****/
+
+.navbar-brand > img{
+    width: 6rem;
+}
 .navbar-nav .active  {
     color: var(--main-color ) !important;
     font-weight: 600;
@@ -182,7 +198,7 @@ body::-webkit-scrollbar-thumb{
     border-radius: 50%;
 } 
 
-.carousel-caption {
+.Carousel .carousel-caption {
     right: 0;
     bottom: 0;
     left: 0;
@@ -195,8 +211,13 @@ body::-webkit-scrollbar-thumb{
     bottom: 0;
     left: 0;
     animation: slideOutDown 1s infinite alternate;
+    cursor: pointer;
 }
 
+.carousel-caption a{
+    color: white;
+    text-decoration: none;
+}
 /***** End Header Carousel *****/
 
 /***** Gallery *****/
@@ -216,7 +237,8 @@ body::-webkit-scrollbar-thumb{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-blend-mode:color;
+    background-blend-mode:normal;
+    
 }
 .grid.wrapper .grid-item .text-hover-line{
     margin: auto;
@@ -225,7 +247,7 @@ body::-webkit-scrollbar-thumb{
 
 .grid.wrapper .grid-item:hover{
     box-shadow: 1px 1px 10px var(--shadow);
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+    background-image: linear-gradient(to top , transparent , black) ;
 }
 
 
@@ -234,17 +256,30 @@ body::-webkit-scrollbar-thumb{
     background-image: url(./Images/Places/usa-liberty.jpg);
     grid-area: Content1;
 }
+.grid.wrapper .grid-item:nth-child(1):hover{
+    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/usa-liberty.jpg) ;
+}
+
 .grid.wrapper .grid-item:nth-child(2){
     background-image: url(./Images/Places/europe-netherlands.jpg);
     grid-area: Content2;
+}
+.grid.wrapper .grid-item:nth-child(2):hover{
+    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/europe-netherlands.jpg) ;
 }
 .grid.wrapper .grid-item:nth-child(3){
     background-image: url(./Images/Places/china.jpg);
     grid-area: Content3;
 }
+.grid.wrapper .grid-item:nth-child(3):hover{
+    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/china.jpg) ;
+}
 .grid.wrapper .grid-item:nth-child(4){
     background-image: url(./Images/Places/egypt-giza.jpg);
     grid-area: Content4;
+}
+.grid.wrapper .grid-item:nth-child(4):hover{
+    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/egypt-giza.jpg) ;
 }
 
 @media (max-width : 600px) {
@@ -262,7 +297,9 @@ body::-webkit-scrollbar-thumb{
 /***** End Gallery *****/
 
 /***** Customer Service *****/
-
+.customer-support{
+    position: relative;
+}
 .persons-images .img-wrapper img{
     border-radius: 50%;
     width: 100px;
@@ -292,18 +329,43 @@ body::-webkit-scrollbar-thumb{
     left: 35%;
 }
 
+.customer-support .image-wrapper img{
+    position: absolute;
+    width:inherit;
+    height: 100px;
+    opacity: 0.5;
+    bottom: 0;
+    animation: train-anim 10s infinite;
+}
+
+
+@keyframes train-anim {
+
+    0%{
+        left: -200px;
+    }
+
+    100%{
+        left: 100%;
+    }
+    
+}
 /***** End Customer Service *****/
 
 /***** testimonials *****/
 
-
-.testimonials .rating-stars{
-    color: var(--main-color);
+.testimonials .carousel-item.active{
+    display: flex;
+    justify-content: center;
+    padding: auto;
 }
-.testimonials .card-img-top{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+
+.testimonials .carousel-caption{
+    position:initial;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top:  3rem;
+
 }
 
 .testimonials .carousel-caption h5{
@@ -312,7 +374,7 @@ body::-webkit-scrollbar-thumb{
     text-align: center;
     text-shadow: none;
     color: black;
-    font-weight: lighter;
+    font-weight:300;
 }
 .testimonials .carousel-caption h4{
     color: black;
@@ -345,6 +407,14 @@ body::-webkit-scrollbar-thumb{
     
 }
 
+.testimonials .carousel-control-prev .fa, .testimonials .carousel-control-next .fa{
+    color: var(--main-color) !important;
+    font-size: 50px;
+    opacity: 0.7;
+}
+.testimonials .carousel-control-prev .fa:hover, .testimonials .carousel-control-next .fa:hover{
+    opacity: 1;
+}
 /***** End testimonials *****/
 
 /***** Qualities *****/
@@ -414,9 +484,15 @@ body::-webkit-scrollbar-thumb{
 }
 .points .column-wrapper .grid-item:nth-child(1){
     background-image: url(./Images/Places/hiking-mountains.jpg);
+} 
+.points .column-wrapper .grid-item:nth-child(1):hover{
+    background-image: linear-gradient( to bottom , transparent , black) ,  url(./Images/Places/hiking-mountains.jpg) ;
 }
 .points .column-wrapper .grid-item:nth-child(2){
     background-image: url(./Images/Places/urban-city.jpg);
+}
+.points .column-wrapper .grid-item:nth-child(2):hover{
+    background-image: linear-gradient( to bottom , transparent , black) ,  url(./Images/Places/urban-city.jpg) ;
 }
 
 
@@ -424,6 +500,9 @@ body::-webkit-scrollbar-thumb{
 
 /***** Newsletter *****/
 
+.newsletter{
+    position: relative;
+}
 .newsletter .email-form{
     padding:1rem;
     border: white;
@@ -434,6 +513,26 @@ body::-webkit-scrollbar-thumb{
     padding: .5rem;
 }
 
+.newsletter .image-wrapper img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    animation: plane-anim 10s forwards infinite;
+    rotate: -20deg;
+}
+
+@keyframes plane-anim {
+    0%{
+        top:70%;
+        left: 0;
+    }
+
+    100%{
+        top: 0;
+        left: 100%;
+    }
+}
 /***** End Newsletter *****/
 
 /***** carousel-1 *****/
@@ -461,18 +560,23 @@ body::-webkit-scrollbar-thumb{
     margin: auto !important;
 }
 
-.owl-one .item.one{
-    background-image: url(./Images/Places/india-tajmahal.jpg);
+.owl-one .item{
+    background-size: 0% , cover;
 }
-
+.owl-one .item:hover{
+    background-size: cover, cover;
+}
+.owl-one .item.one{
+    background-image:  linear-gradient(to bottom, transparent , black) , url(./Images/Places/india-tajmahal.jpg);
+}
 .owl-one .item.two{
-    background-image: url(./Images/Places/turkey-hagia-sophia.jpg);
+    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/turkey-hagia-sophia.jpg);
 }
 .owl-one .item.three{
-    background-image: url(./Images/Places/big-ben.jpg);
+    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/big-ben.jpg);
 }
 .owl-one .item.four{
-    background-image: url(./Images/Places/Hawaii.jpg);
+    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/Hawaii.jpg);
 }
 
 .owl-nav{
@@ -484,9 +588,9 @@ body::-webkit-scrollbar-thumb{
     margin: 1rem  !important;
     width: 60px;
     height: fit-content;
-    padding-bottom: 100px !important;
     opacity: 0.9 !important;
-    padding: 5rem !important;
+    width: 4.5rem !important;
+    padding-bottom: .5em !important;
 }
 
 .owl-nav span{
@@ -496,10 +600,15 @@ body::-webkit-scrollbar-thumb{
 
 
 .owl-next:hover ,.owl-prev:hover{
+    background-color: var(--main-color) !important;
     transition: all 50ms ease-in-out;
     opacity: 1 !important;
+    box-shadow: 1px 1px 5px var(--box-shadow);
 }
 
+.owl-next:hover span ,.owl-prev:hover  span{
+    color: white !important;
+}
 .owl-next:active , .owl-prev:active{
     transform: translate(0px , 1px);
     box-shadow: none;
@@ -508,6 +617,72 @@ body::-webkit-scrollbar-thumb{
 
 /***** End carousel-1 *****/
 
+
+/***** footer *****/
+.footer{
+    position: relative;
+    overflow: hidden;
+}
+.footer .website-title , .footer .social-icons .fa{
+    color:var(--main-color) !important;
+}
+
+.footer li{ 
+    padding: .5rem;
+    list-style: none outside;
+}
+
+.footer ul{
+    padding-left:0px;
+}
+.footer li:hover{
+    color: var(--main-color);
+}
+
+.footer .anim{
+    position: absolute;
+    filter:invert(100%) ;
+    opacity: 0.3;
+    z-index: 100;
+    width: 100px;
+}
+
+.footer .cloud-1{
+    z-index: 10;
+    bottom: 50%;
+    animation: cloud 10s infinite forwards;
+}
+.footer .cloud-2{
+    z-index: 20;
+    animation: cloud 10s infinite reverse;
+}
+
+.footer .ballon{
+    z-index: 15;
+    width: 200px;
+    animation: ballon 20s  infinite forwards ;
+}
+
+@keyframes ballon {
+    0%{
+        top: 100%;
+    }
+
+    100%{
+        top: -100px;
+    }
+}
+
+@keyframes cloud {
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+/***** End footer *****/
 @media screen and (width >= 768px){
     .Header .carousel-item img{
         height:500px;
