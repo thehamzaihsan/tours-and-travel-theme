@@ -6,14 +6,18 @@
 
 :root{
     --main-color : #FF9900;
+    --background-color: rgb(255, 255, 255); 
     --shadow: rgba(0, 0, 0, 0.3 );
     --box-shadow:rgba(0, 0, 0, 0.5 );
     --secondary-color: #D9D9D9;
     --main-color-50:rgba(255, 153, 0, 0.5);
 }
 
-
+html{
+    scroll-behavior: smooth ;  
+}
 body{
+    background-color: var(--background-color);
     font-family: 'Montserrat';
     overflow-x: hidden;
 }
@@ -342,7 +346,7 @@ body::-webkit-scrollbar-thumb{
 @keyframes train-anim {
 
     0%{
-        left: -200px;
+        left: 0%;
     }
 
     100%{
@@ -397,7 +401,7 @@ body::-webkit-scrollbar-thumb{
     }
 }
 .testimonials .carousel-inner{
-    background-image: url(./Images/Places/mountains.jpg), linear-gradient(to top, transparent 1%, white 80%); 
+    background-image: url(./Images/Places/mountains.jpg), linear-gradient(to top, transparent 1%, var(--background-color) 80%); 
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -525,17 +529,20 @@ body::-webkit-scrollbar-thumb{
 @keyframes plane-anim {
     0%{
         top:70%;
-        left: 0;
+        left: 0%;
     }
 
     100%{
-        top: 0;
+        top: 0%;
         left: 100%;
     }
 }
 /***** End Newsletter *****/
 
 /***** carousel-1 *****/
+.carousel-stage{
+    overflow: hidden;
+}
 .owl-one .item{
     background-color: #FF9900;
     height: 25rem;
@@ -648,17 +655,14 @@ body::-webkit-scrollbar-thumb{
 }
 
 .footer .cloud-1{
-    z-index: 10;
     bottom: 50%;
     animation: cloud 10s infinite forwards;
 }
 .footer .cloud-2{
-    z-index: 20;
     animation: cloud 10s infinite reverse;
 }
 
 .footer .ballon{
-    z-index: 15;
     width: 200px;
     animation: ballon 20s  infinite forwards ;
 }
@@ -669,7 +673,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     100%{
-        top: -100px;
+        top: 0%;
     }
 }
 
@@ -682,6 +686,13 @@ body::-webkit-scrollbar-thumb{
     }
 }
 
+.anim-holder{
+    overflow: hidden;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 .25rem var(--main-color-50);
+}
 /***** End footer *****/
 @media screen and (width >= 768px){
     .Header .carousel-item img{

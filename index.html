@@ -13,9 +13,9 @@
             crossorigin="anonymous" />
 
         <!-- owl carousel css link -->
-            <link rel="stylesheet" href="owl.carousel.min.css">
+            <link rel="stylesheet" href="/external-libs/owl.carousel.min.css">
         <!-- owl carousel theme.css link -->
-        <link rel="stylesheet" href="owl.theme.default.min.css">
+        <link rel="stylesheet" href="/external-libs/owl.theme.default.min.css">
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script
@@ -32,6 +32,12 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             />
+        <!-- wow.js -->
+            <script src="/external-libs/wow.min.js"></script>
+            <script>
+              wow = new WOW()
+                    wow.init();
+            </script>
         <!-- CSS -->
         <link rel="stylesheet" href="style.css">
         <!-- JS -->
@@ -64,7 +70,7 @@
 
                 <div class="navbar-brand mt-lg-0 mt-4 d-flex ">
                     <img src="./Images/Flaticons/tours.png" alt="">
-                    <h2 class="m-3">Tours and Travel</h2>
+                    <h2 class="m-3 d-sm-block d-none">Tours and Travel</h2>
                 </div>
                 <button type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" class="Navbartoggler border-0
@@ -196,7 +202,7 @@
                 <div class="grid wrapper">
 
                     <div class="grid-item d-flex justify-content-center
-                        hover-line-item">
+                        hover-line-item wow fadeInLeft"  data-wow-duration="5s" data-wow-delay="0.5s">
                         <div class="text-wrapper m-auto d-flex text-hover-line
                             flex-column">
                             <h1 class="align-content-center">USA</h1>
@@ -399,7 +405,7 @@
 
         </div>
 
-        <div class=" customer-support bg-second p-3">
+        <div class=" customer-support bg-second p-3 anim-holder">
             <div class="image-wrapper"><img src="./Images/Flaticons/train-2.png" alt=""></div>
             <div class="container">
 
@@ -521,7 +527,7 @@
             </div>
         </div>
 
-        <div class=" newsletter bg-second p-3">
+        <div class=" newsletter bg-second p-3 anim-holder">
             <div class="image-wrapper"><img src="./Images/Flaticons/black-plane.png" alt=""></div>
             <div class="container">
 
@@ -557,7 +563,7 @@
             </div>
         </div>
 
-        <div class="footer bg-black">
+        <div class="footer bg-black anim-holder">
             <img src="./Images/Flaticons/air-balloon.png" alt="" class="anim ballon">
             <img src="./Images/Flaticons/cloud.png" alt="" class="anim cloud-1">
             <img src="./Images/Flaticons/cloud.png" alt="" class="anim cloud-2">
