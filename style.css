@@ -373,6 +373,11 @@ body::-webkit-scrollbar-thumb{
     left: 35%;
 }
 
+@media (max-width:500px) {
+    .r-wrapper{
+        left:0%;
+    }
+}
 .customer-support .image-wrapper img{
     position: absolute;
     width:inherit;
