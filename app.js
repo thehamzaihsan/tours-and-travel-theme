@@ -11,7 +11,7 @@ dropdown.addEventListener('mouseover' , function(){
     dropdownmenu.classList.add('show');
 });
 
-
+ 
 dropdown.addEventListener('mouseout' , function(){
     navbarDropdown.classList.remove('show');
     dropdownmenu.classList.remove('show');
@@ -49,5 +49,27 @@ $(document).ready(function(){
     })
         
   });
+
   
-  
+  //Animation on Scroll
+
+const observer = new IntersectionObserver( (enteries) => {
+    enteries.forEach((entry)=>{
+        console.log(entry);
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+
+    })
+});
+
+
+
+const hiddenelements = document.querySelectorAll('.hidden')
+  hiddenelements.forEach((el)=> observer.observe(el));
+
+
+
+//counter-animation
+var num_place = document.querySelector('.number')
+var final_number = 70;

@@ -31,6 +31,45 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{
     background-color: var(--main-color);
 }
+
+/***** Animation on load *****/
+@media(prefers-reduced-motion){
+    .show{
+        animation: none;
+    }
+}
+.hidden:not(.show){
+    visibility:hidden;
+}
+.show{
+    visibility:visible;
+}
+
+.show.fadeInLeft{
+    animation: fadeInLeft 1s;
+}
+
+.show.fadeInRight{
+    animation: fadeInRight 1s;
+}
+
+.show.fadeInUp{
+    animation: fadeInUp 1s;
+}
+
+.show.fadeInDown{
+    animation:fadeInDown 1s;
+}
+
+
+.delay-1{
+    animation-delay:200ms !important;
+}
+
+.delay-2{
+    animation-delay: 400ms !important;
+}
+/***** End Animation on load *****/
 /***** Multipurpose *****/
 
 .hover-line-item .line{
