@@ -7,6 +7,7 @@
 :root{
     --main-color : #FF9900;
     --background-color: white; 
+    --accent-color :white;
     --shadow: rgba(0, 0, 0, 0.3 );
     --box-shadow:rgba(0, 0, 0, 0.5 );
     --secondary-color: #D9D9D9;
@@ -84,8 +85,13 @@ body::-webkit-scrollbar-thumb{
 
 }
 .text-hover-line{
+
     text-shadow: 1px 1px 10px black;
     cursor: pointer;
+}
+.text-hover-line a{
+    text-decoration: none;
+    color: var(--accent-color);
 }
 
 .hover-line-item:hover .text-hover-line{
