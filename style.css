@@ -95,7 +95,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .hover-line-item:hover .text-hover-line{
-    text-shadow: none !important;
+    text-shadow: none ;
 }
 .hover-line-item:hover .line{
     animation: hover-line .5s ease-in-out 0s 1 forwards;
@@ -105,11 +105,11 @@ body::-webkit-scrollbar-thumb{
 
 @keyframes hover-line {
     0%{
-        margin-right: 100%;
+        margin-inline: 100%;
     }
 
     100%{
-        margin-right: 0%;
+        margin-inline: 20%;
     }
     
 }
@@ -720,6 +720,7 @@ body::-webkit-scrollbar-thumb{
     animation: ballon 20s  infinite forwards ;
 }
 
+
 @keyframes ballon {
     0%{
         top: 100%;
@@ -746,6 +747,10 @@ body::-webkit-scrollbar-thumb{
 .form-control:focus{
     box-shadow: 0 0 0 .25rem var(--main-color-50);
 }
+
+.list-1 li:hover .list-1-title{
+    text-decoration: underline var(--main-color);
+}
 /***** End footer *****/
 @media screen and (width >= 768px){
     .Header .carousel-item img{
@@ -754,3 +759,155 @@ body::-webkit-scrollbar-thumb{
     }
 }
 
+/***** page-country *****/
+.hero-image{
+    position: relative;
+    width: auto;
+    height: 250px;
+}
+
+@media (max-width: 500px) {
+    .hero-image{
+        height: fit-content;
+    }
+}
+.hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;   
+    box-shadow:  0px 0px 200px rgb(0, 0, 0 , 0.9) inset;
+    border: none;
+}
+
+.hero-text-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    margin: auto;
+    color:white;
+}
+
+.hover-line-item:hover .hero-text{
+    text-shadow: 1px 1px 10px black;
+}
+
+.country-gallery .carousel-item img{
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.travelling-types .grid-wrapper{
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: "Content1 Content3 Content4"
+                         "Content2 Content3 Content4";
+    grid-template-columns: 1.3fr 1fr 1fr;
+}
+
+.travelling-types .grid-wrapper .grid-item{
+    background-color: #FF9900;
+    background-size: 0% , cover;
+    background-position: center;
+    
+}
+.travelling-types .grid-wrapper .grid-item:hover{
+    box-shadow: 1px 1px 10px var(--box-shadow);
+    background-size: cover , cover;
+}
+.travelling-types .grid-wrapper .grid-item:nth-child(1){
+    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/hiking-mountains.jpg);
+    grid-area: Content1;
+}
+.travelling-types .grid-wrapper .grid-item:nth-child(2){
+    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/urban-city-2.jpg);
+    grid-area: Content2;
+}
+.travelling-types .grid-wrapper .grid-item:nth-child(3){
+    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/people-walking.jpg);
+    grid-area: Content3;
+}
+.travelling-types .grid-wrapper .grid-item:nth-child(4){
+    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/greece-bulding.jpg);
+    grid-area: Content4;
+    height: 30rem;
+}
+
+
+@media (max-width:1000px) {
+    .travelling-types .grid-wrapper{
+        grid-template-areas: "Content1"
+                             "Content2"
+                             "Content3"
+                             "Content4";
+        grid-template-columns: auto;
+    }
+
+    .travelling-types .grid-wrapper .grid-item{
+        height: 20rem;
+    }
+}
+
+
+.packages .package{
+    background-color: #FF9900;
+    width: 18rem;
+    height:20rem;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background-size: 0% , cover;
+    background-position: center;
+
+}
+
+.packages .text{
+    text-shadow: 1px 1px 10px black;
+}
+
+
+.packages .package:nth-child(1){
+    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/hotel-lobby.jpg);
+}
+.packages .package:nth-child(2){
+    background-image: linear-gradient(to bottom, transparent , black) , url(./Images/Places/hotel-lobby-2.jpg);
+}
+.packages .package:nth-child(3){
+    background-image: linear-gradient(to bottom, transparent , black) ,url(./Images/Places/usa-images/huper-by-joshua-earle-lWYUA42UmL8-unsplash.jpg);
+}
+
+.packages .package:hover{
+    box-shadow: 1px 1px 10px var(--box-shadow);
+    background-size: cover , cover;
+}
+.package .price{
+    color: white;
+    transition: color 1s;
+}
+.stars{
+    color: var(--main-color);
+}
+.packages .package:hover .package-content{
+    margin-top: 35%;
+    transition: all 1s;
+}
+
+
+.packages .package:hover .price{
+    color: var(--main-color);
+    transition: color 1s;
+}
+.package .package-content{
+    position: absolute;
+    margin-top:  65%;
+    transition: all 1s;
+}
+
+.package .badge{
+    background-color: var(--main-color);
+
+}
+
+
+/***** End page-country *****/
