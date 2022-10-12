@@ -855,25 +855,30 @@ body::-webkit-scrollbar-thumb{
     width: 18rem;
     height:20rem;
     position: relative;
-    overflow: hidden;
     color: white;
     background-size: 0% , cover;
     background-position: center;
 
 }
 
+.packages .package .package-inner{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height:100%;
+}
 .packages .text{
     text-shadow: 1px 1px 10px black;
 }
 
 
-.packages .package:nth-child(1){
+.packages .package.one{
     background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/hotel-lobby.jpg);
 }
-.packages .package:nth-child(2){
+.packages .package.two{
     background-image: linear-gradient(to bottom, transparent , black) , url(./Images/Places/hotel-lobby-2.jpg);
 }
-.packages .package:nth-child(3){
+.packages .package.three{
     background-image: linear-gradient(to bottom, transparent , black) ,url(./Images/Places/usa-images/huper-by-joshua-earle-lWYUA42UmL8-unsplash.jpg);
 }
 
@@ -888,26 +893,44 @@ body::-webkit-scrollbar-thumb{
 .stars{
     color: var(--main-color);
 }
-.packages .package:hover .package-content{
-    margin-top: 35%;
-    transition: all 1s;
+
+
+@media (hover:hover){
+    .packages .package:hover .package-content{
+        margin-top: 40% !important;
+        transition: all 1s;
+    }
+    .package .package-content{
+        position: absolute;
+        margin-top:  65% !important;
+        transition: all 1s;
+    }
+    
 }
+
+
+    .package .package-content{
+        position: absolute;
+        margin-top:  40%;
+        transition: all 1s;
+    }
 
 
 .packages .package:hover .price{
     color: var(--main-color);
     transition: color 1s;
 }
-.package .package-content{
-    position: absolute;
-    margin-top:  65%;
-    transition: all 1s;
-}
+
 
 .package .badge{
+    position: absolute;
     background-color: var(--main-color);
-
+    left: 85%;
+    top: -3%;
 }
 
+.package:hover .badge{
+    box-shadow: 1px 1px 10px var(--box-shadow);
+}
 
 /***** End page-country *****/
