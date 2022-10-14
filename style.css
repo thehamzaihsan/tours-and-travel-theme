@@ -4,171 +4,189 @@
 
 
 
-:root{
-    --main-color : #FF9900;
-    --background-color: white; 
-    --accent-color :white;
-    --shadow: rgba(0, 0, 0, 0.3 );
-    --box-shadow:rgba(0, 0, 0, 0.5 );
+:root {
+    --main-color: #FF9900;
+    --background-color: white;
+    --accent-color: white;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --box-shadow: rgba(0, 0, 0, 0.5);
     --secondary-color: #D9D9D9;
-    --main-color-50:rgba(255, 153, 0, 0.5);
+    --main-color-50: rgba(255, 153, 0, 0.5);
 }
 
-html{
-    scroll-behavior: smooth ;  
+html {
+    scroll-behavior: smooth;
     overflow-x: hidden;
 }
-body{
+
+body {
     background-color: var(--background-color);
     font-family: 'Montserrat';
     overflow-x: hidden;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     width: 0.25rem;
 }
-body::-webkit-scrollbar-track{
+
+body::-webkit-scrollbar-track {
     background-color: rgb(48, 48, 48);
 }
-body::-webkit-scrollbar-thumb{
+
+body::-webkit-scrollbar-thumb {
     background-color: var(--main-color);
 }
 
 /***** Animation on load *****/
-@media(prefers-reduced-motion){
-    .show{
+@media(prefers-reduced-motion) {
+    .show {
         animation: none;
     }
 }
-.hidden:not(.show){
+
+.hidden:not(.show) {
     opacity: 0;
-   
+
 }
-.show{
+
+.show {
     transition: opacity 1s linear;
     opacity: 1;
 }
 
-.show.fadeInLeft{
+.show.fadeInLeft {
     animation: fadeInLeft 1s;
 }
 
-.show.fadeInRight{
+.show.fadeInRight {
     animation: fadeInRight 1s;
 }
 
-.show.fadeInUp{
+.show.fadeInUp {
     animation: fadeInUp 1s;
 }
 
-.show.fadeInDown{
-    animation:fadeInDown 1s;
+.show.fadeInDown {
+    animation: fadeInDown 1s;
 }
 
 
-.delay-1{
-    animation-delay:200ms !important;
+.delay-1 {
+    animation-delay: 200ms !important;
 }
 
-.delay-2{
+.delay-2 {
     animation-delay: 400ms !important;
 }
+
 /***** End Animation on load *****/
 /***** Multipurpose *****/
 
-.hover-line-item .line{
+.hover-line-item .line {
     margin-right: 1rem;
-    margin-inline:0px;
+    margin-inline: 0px;
     margin-right: 100%;
     height: 5px;
     background-color: var(--main-color);
 
 }
-.text-hover-line{
+
+.text-hover-line {
 
     text-shadow: 1px 1px 10px black;
     cursor: pointer;
 }
-.text-hover-line a{
+
+.text-hover-line a {
     text-decoration: none;
     color: var(--accent-color);
 }
 
-.hover-line-item:hover .text-hover-line{
-    text-shadow: none ;
+.hover-line-item:hover .text-hover-line {
+    text-shadow: none;
 }
-.hover-line-item:hover .line{
+
+.hover-line-item:hover .line {
     animation: hover-line .5s ease-in-out 0s 1 forwards;
 }
 
 
 
 @keyframes hover-line {
-    0%{
+    0% {
         margin-inline: 100%;
     }
 
-    100%{
+    100% {
         margin-inline: 20%;
     }
-    
+
 }
 
-.section{
+.section {
     margin-bottom: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-.bg-second{
+
+.bg-second {
     background-color: var(--secondary-color);
 }
-.button-bordered{
+
+.button-bordered {
     border-color: var(--main-color);
-    border-style:solid;
+    border-style: solid;
     background-color: var(--background-color);
 }
 
-.button-bordered:hover{
+.button-bordered:hover {
     background-color: var(--main-color);
     box-shadow: 1px 1px 1px black;
     transition: all 50ms ease-in-out;
 }
 
-.button-bordered:active{
-    box-shadow:none;
-    transform: translate(1px , 1px);
+.button-bordered:active {
+    box-shadow: none;
+    transform: translate(1px, 1px);
 }
 
-.button-simple{
+.button-simple {
     padding: 1rem;
     border: none;
     background-color: var(--main-color);
     opacity: 0.9;
 }
 
-.button-simple:hover{
+.button-simple:hover {
     transition: all 50ms ease-in-out;
     opacity: 1;
 }
 
-.button-simple:active{
-    transform: translate(0px , 1px);
+.button-simple:active {
+    transform: translate(0px, 1px);
 }
-
-.section-heading-wrapper{
+.button-simple.disabled:active{
+    transform: none;
+}
+.button-simple.disabled{
+    background-color: var(--main-color-50);
+    cursor:auto;
+}
+.section-heading-wrapper {
     display: flex;
-    padding : 1rem;  
+    padding: 1rem;
     margin: 1rem;
 }
 
-.section-heading-wrapper > .line{
+.section-heading-wrapper>.line {
     margin-right: 1rem;
     width: 5px;
     height: 50px;
     background-color: var(--main-color);
 
 }
-.section-heading-wrapper{
+
+.section-heading-wrapper {
     padding-left: 0px;
     margin-left: 0px;
 }
@@ -176,13 +194,13 @@ body::-webkit-scrollbar-thumb{
 /***** End Multipurpose *****/
 
 /***** Banner *****/
-.banner{
+.banner {
     background-color: var(--main-color);
 }
 
 
 
-.social-icons .fa{
+.social-icons .fa {
     color: black;
     text-decoration: none;
     margin-inline: .5rem;
@@ -192,32 +210,41 @@ body::-webkit-scrollbar-thumb{
 
 /***** Navbar *****/
 
-.navbar-brand > img{
+.navbar-brand>img {
     width: 6rem;
 }
-.navbar-nav .active  {
-    color: var(--main-color ) !important;
+
+.navbar-nav .active {
+    color: var(--main-color) !important;
     font-weight: 600;
 }
 
 
-.navbar-nav .nav-item:hover:not(.active):not(.button){
-    text-decoration: underline var(--main-color) 2px; 
+.navbar-nav .nav-item:hover:not(.active):not(.button) {
+    text-decoration: underline var(--main-color) 2px;
     font-weight: 600;
 
 }
 
-.dropdown-toggle:hover .dropdown-menu{
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+.dropdown-toggle:hover .dropdown-menu {
     display: inline !important;
 }
 
-.dropdown-toggle::after{
+.dropdown-toggle::after {
     content: '\f078' !important;
     font: normal normal normal 10px/1 FontAwesome;
-    border-top:none !important ;
+    border-top: none !important;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     border: white;
 }
 
@@ -225,30 +252,31 @@ body::-webkit-scrollbar-thumb{
 
 /***** Header Carousel *****/
 
-.dropdown-menu{
+.dropdown-menu {
     border-radius: 0px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.322);
 }
 
-.testimonials .carousel-inner img ,  .Header .carousel-item img{
-    height:360px;
+.testimonials .carousel-inner img,
+.Header .carousel-item img {
+    height: 360px;
     object-fit: cover;
     width: 100%;
 }
 
 .carousel-caption {
-    text-shadow: 1px 1px 10px black;  
+    text-shadow: 1px 1px 10px black;
 }
 
-.Header .carousel-indicators{
-    justify-content: start ;
+.Header .carousel-indicators {
+    justify-content: start;
 }
 
-.carousel-indicators button{
+.carousel-indicators button {
     width: 10px !important;
     height: 10px !important;
     border-radius: 50%;
-} 
+}
 
 .Carousel .carousel-caption {
     right: 0;
@@ -258,7 +286,7 @@ body::-webkit-scrollbar-thumb{
     transform: translateY(-50%);
 }
 
-.scroll-down{
+.scroll-down {
     right: 0;
     bottom: 0;
     left: 0;
@@ -266,82 +294,91 @@ body::-webkit-scrollbar-thumb{
     cursor: pointer;
 }
 
-.carousel-caption a{
+.carousel-caption a {
     color: white;
     text-decoration: none;
 }
+
 /***** End Header Carousel *****/
 
 /***** Gallery *****/
 
-.Gallery .grid.wrapper{
+.Gallery .grid.wrapper {
     display: grid;
-    grid-template-columns: 2fr , 1fr , 1fr;
+    grid-template-columns: 2fr, 1fr, 1fr;
     grid-template-rows: 2fr, 1fr, 1fr;
     grid-template-areas: "Content1 Content3 Content2"
-                         "Content1 Content4 Content4";
-    gap: .5em;  
+        "Content1 Content4 Content4";
+    gap: .5em;
 
 }
 
-.grid.wrapper .grid-item{
+.grid.wrapper .grid-item {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-blend-mode:normal;
-    
+    background-blend-mode: normal;
+
 }
-.grid.wrapper .grid-item .text-hover-line{
+
+.grid.wrapper .grid-item .text-hover-line {
     margin: auto;
-    color:white;
+    color: white;
 }
 
-.grid.wrapper .grid-item:hover{
+.grid.wrapper .grid-item:hover {
     box-shadow: 1px 1px 10px var(--shadow);
-    background-image: linear-gradient(to top , transparent , black) ;
+    background-image: linear-gradient(to top, transparent, black);
 }
 
 
-.grid.wrapper .grid-item:nth-child(1){
+.grid.wrapper .grid-item:nth-child(1) {
     height: 30rem;
     background-image: url(./Images/Places/usa-liberty.jpg);
     grid-area: Content1;
 }
-.grid.wrapper .grid-item:nth-child(1):hover{
-    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/usa-liberty.jpg) ;
+
+.grid.wrapper .grid-item:nth-child(1):hover {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/usa-liberty.jpg);
 }
 
-.grid.wrapper .grid-item:nth-child(2){
+.grid.wrapper .grid-item:nth-child(2) {
     background-image: url(./Images/Places/europe-netherlands.jpg);
     grid-area: Content2;
 }
-.grid.wrapper .grid-item:nth-child(2):hover{
-    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/europe-netherlands.jpg) ;
+
+.grid.wrapper .grid-item:nth-child(2):hover {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/europe-netherlands.jpg);
 }
-.grid.wrapper .grid-item:nth-child(3){
+
+.grid.wrapper .grid-item:nth-child(3) {
     background-image: url(./Images/Places/china.jpg);
     grid-area: Content3;
 }
-.grid.wrapper .grid-item:nth-child(3):hover{
-    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/china.jpg) ;
+
+.grid.wrapper .grid-item:nth-child(3):hover {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/china.jpg);
 }
-.grid.wrapper .grid-item:nth-child(4){
+
+.grid.wrapper .grid-item:nth-child(4) {
     background-image: url(./Images/Places/egypt-giza.jpg);
     grid-area: Content4;
 }
-.grid.wrapper .grid-item:nth-child(4):hover{
-    background-image: linear-gradient(to bottom , transparent , black) ,  url(./Images/Places/egypt-giza.jpg) ;
+
+.grid.wrapper .grid-item:nth-child(4):hover {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/egypt-giza.jpg);
 }
 
 @media (max-width : 600px) {
-    .grid.wrapper{
+    .grid.wrapper {
         grid-template-areas: "Content1"
-                             "Content2"
-                             "Content3"
-                             "Content4" !important;
+            "Content2"
+            "Content3"
+            "Content4" !important;
     }
-    .grid.wrapper .grid-item{
+
+    .grid.wrapper .grid-item {
         height: 20rem;
     }
 }
@@ -349,46 +386,52 @@ body::-webkit-scrollbar-thumb{
 /***** End Gallery *****/
 
 /***** Customer Service *****/
-.customer-support{
+.customer-support {
     position: relative;
 }
-.persons-images .img-wrapper img{
+
+.persons-images .img-wrapper img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    filter:grayscale(100%);
+    filter: grayscale(100%);
     box-shadow: 1px 1px 10px var(--shadow);
     object-fit: cover;
 }
 
-.persons-images .img-wrapper:nth-child(1){
+.persons-images .img-wrapper:nth-child(1) {
     left: 0px;
 }
-.persons-images .img-wrapper:nth-child(2){
-    left:  60px;
+
+.persons-images .img-wrapper:nth-child(2) {
+    left: 60px;
 }
-.persons-images .img-wrapper:nth-child(3){
-   left :120px;
+
+.persons-images .img-wrapper:nth-child(3) {
+    left: 120px;
 }
-.persons-images .img-wrapper:nth-child(4){
+
+.persons-images .img-wrapper:nth-child(4) {
     left: 180px;
 }
-.persons-images{
+
+.persons-images {
     height: 130px;
 }
 
-.r-wrapper{
+.r-wrapper {
     left: 35%;
 }
 
 @media (max-width:500px) {
-    .r-wrapper{
-        left:0%;
+    .r-wrapper {
+        left: 0%;
     }
 }
-.customer-support .image-wrapper img{
+
+.customer-support .image-wrapper img {
     position: absolute;
-    width:inherit;
+    width: inherit;
     height: 100px;
     opacity: 0.5;
     bottom: 0;
@@ -398,96 +441,108 @@ body::-webkit-scrollbar-thumb{
 
 @keyframes train-anim {
 
-    0%{
+    0% {
         left: 0%;
     }
 
-    100%{
+    100% {
         left: 100%;
     }
-    
+
 }
+
 /***** End Customer Service *****/
 
 /***** testimonials *****/
 
-.testimonials .carousel-item.active{
+.testimonials .carousel-item.active {
     display: flex;
     justify-content: center;
     padding: auto;
 }
 
-.testimonials .carousel-caption{
-    position:initial;
+.testimonials .carousel-caption {
+    position: initial;
     margin-top: auto;
     margin-bottom: auto;
-    padding-top:  3rem;
+    padding-top: 3rem;
 
 }
 
-.testimonials .carousel-caption h5{
-    padding-inline:10rem;
+.testimonials .carousel-caption h5 {
+    padding-inline: 10rem;
     margin: auto;
     text-align: center;
     text-shadow: none;
     color: black;
-    font-weight:300;
+    font-weight: 300;
 }
-.testimonials .carousel-caption h4{
+
+.testimonials .carousel-caption h4 {
     color: black;
     margin: 1rem;
-    font-weight:normal;
+    font-weight: normal;
     text-shadow: none;
 }
-.testimonials .carousel-caption .tour-name{
+
+.testimonials .carousel-caption .tour-name {
     color: var(--main-color);
     margin: 1rem;
-    font-weight:normal;
+    font-weight: normal;
 }
+
 @media (max-width:600px) {
-    .testimonials .carousel-caption h5{
+    .testimonials .carousel-caption h5 {
         padding-inline: 1rem;
     }
-    .testimonials .carousel-caption .tour-name{
+
+    .testimonials .carousel-caption .tour-name {
 
         text-shadow: 1px 1px 10px var(--shadow);
     }
 }
-.testimonials .carousel-inner{
-    background-image: url(./Images/Places/mountains.jpg), linear-gradient(to top, transparent 1%, var(--background-color) 80%); 
+
+.testimonials .carousel-inner {
+    background-image: url(./Images/Places/mountains.jpg), linear-gradient(to top, transparent 1%, var(--background-color) 80%);
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 30rem;
     background-blend-mode: color;
-    
+
 }
 
-.testimonials .carousel-control-prev .fa, .testimonials .carousel-control-next .fa{
+.testimonials .carousel-control-prev .fa,
+.testimonials .carousel-control-next .fa {
     color: var(--main-color) !important;
     font-size: 50px;
     opacity: 0.7;
 }
-.testimonials .carousel-control-prev .fa:hover, .testimonials .carousel-control-next .fa:hover{
+
+.testimonials .carousel-control-prev .fa:hover,
+.testimonials .carousel-control-next .fa:hover {
     opacity: 1;
 }
+
 /***** End testimonials *****/
 
 /***** Qualities *****/
-.Qualities img{
+.Qualities img {
     margin: 1rem;
-    width:70px;
+    width: 70px;
     height: inherit;
 }
-.Qualities .item:hover h5{
+
+.Qualities .item:hover h5 {
     color: var(--main-color);
 }
 
-.Qualities .item:hover img{
+.Qualities .item:hover img {
     scale: 1.2;
 }
-.Qualities .text-wrapper h5{
+
+.Qualities .text-wrapper h5 {
     font-weight: 600;
 }
 
@@ -496,81 +551,89 @@ body::-webkit-scrollbar-thumb{
 
 /***** Points *****/
 
-.points .sub-image img{
+.points .sub-image img {
     width: 20rem;
     height: inherit;
 }
 
-.points .offering-points li{
-    list-style-type:none;   
+.points .offering-points li {
+    list-style-type: none;
     margin-top: .5em;
     margin-bottom: .5em;
 }
 
-.offering-points div{
+.offering-points div {
     display: flex;
     flex-direction: row;
 }
-.points .offering-points li:hover{
+
+.points .offering-points li:hover {
     color: var(--main-color);
 }
-.points .offering-points .fa{
+
+.points .offering-points .fa {
     color: var(--main-color);
-    padding: 1rem ;
+    padding: 1rem;
     padding-inline: .5rem;
-    
+
 
 }
 
-.points .column-wrapper .grid-item{
+.points .column-wrapper .grid-item {
     margin-inline: 2rem;
     margin: .5rem;
     padding: 1rem;
     height: 15rem;
-    width:auto;
+    width: auto;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     color: white;
 }
-.points .column-wrapper .grid-item:hover{
+
+.points .column-wrapper .grid-item:hover {
     box-shadow: 1px 1px 10px var(--box-shadow);
     background-position: center;
     background-size: cover;
 }
-.points .column-wrapper .grid-item:nth-child(1){
+
+.points .column-wrapper .grid-item:nth-child(1) {
     background-image: url(./Images/Places/hiking-mountains.jpg);
-} 
-.points .column-wrapper .grid-item:nth-child(1):hover{
-    background-image: linear-gradient( to bottom , transparent , black) ,  url(./Images/Places/hiking-mountains.jpg) ;
 }
-.points .column-wrapper .grid-item:nth-child(2){
+
+.points .column-wrapper .grid-item:nth-child(1):hover {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/hiking-mountains.jpg);
+}
+
+.points .column-wrapper .grid-item:nth-child(2) {
     background-image: url(./Images/Places/urban-city.jpg);
 }
-.points .column-wrapper .grid-item:nth-child(2):hover{
-    background-image: linear-gradient( to bottom , transparent , black) ,  url(./Images/Places/urban-city.jpg) ;
+
+.points .column-wrapper .grid-item:nth-child(2):hover {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/urban-city.jpg);
 }
 
 
-/***** End Points  *****/  
+/***** End Points  *****/
 
 /***** Newsletter *****/
 
-.newsletter{
+.newsletter {
     position: relative;
 }
-.newsletter .email-form{
-    padding:1rem;
+
+.newsletter .email-form {
+    padding: 1rem;
     border: white;
-    border-radius:0px;
+    border-radius: 0px;
 }
 
-.newsletter .button-simple{
+.newsletter .button-simple {
     padding: .5rem;
 }
 
-.newsletter .image-wrapper img{
+.newsletter .image-wrapper img {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -580,23 +643,25 @@ body::-webkit-scrollbar-thumb{
 }
 
 @keyframes plane-anim {
-    0%{
-        top:70%;
+    0% {
+        top: 70%;
         left: 0%;
     }
 
-    100%{
+    100% {
         top: 0%;
         left: 100%;
     }
 }
+
 /***** End Newsletter *****/
 
 /***** carousel-1 *****/
-.carousel-stage{
+.carousel-stage {
     overflow: hidden;
 }
-.owl-one .item{
+
+.owl-one .item {
     background-color: #FF9900;
     height: 25rem;
     margin: 1rem;
@@ -607,45 +672,49 @@ body::-webkit-scrollbar-thumb{
 
 }
 
-.owl-one .item .text-wrapper{
-    margin: auto 0 ;
+.owl-one .item .text-wrapper {
+    margin: auto 0;
     padding: 1rem;
 }
 
-.owl-one .item:hover{
+.owl-one .item:hover {
     box-shadow: 1px 1px 10px var(--box-shadow);
 }
 
-.owl-one .item:hover  .text-wrapper{
-    margin: auto !important;
+
+.owl-one .item {
+    background-size: 0%, cover;
 }
 
-.owl-one .item{
-    background-size: 0% , cover;
-}
-.owl-one .item:hover{
+.owl-one .item:hover {
     background-size: cover, cover;
 }
-.owl-one .item.one{
-    background-image:  linear-gradient(to bottom, transparent , black) , url(./Images/Places/india-tajmahal.jpg);
-}
-.owl-one .item.two{
-    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/turkey-hagia-sophia.jpg);
-}
-.owl-one .item.three{
-    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/big-ben.jpg);
-}
-.owl-one .item.four{
-    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/Hawaii.jpg);
+
+.owl-one .item.one {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/india-tajmahal.jpg);
 }
 
-.owl-nav{
+.owl-one .item.two {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/turkey-hagia-sophia.jpg);
+}
+
+.owl-one .item.three {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/big-ben.jpg);
+}
+
+.owl-one .item.four {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/Hawaii.jpg);
+}
+
+.owl-nav {
     display: flex;
     justify-content: center;
 }
-.owl-carousel .owl-nav .owl-prev  , .owl-next{
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-next {
     border: 2px solid var(--main-color) !important;
-    margin: 1rem  !important;
+    margin: 1rem !important;
     width: 60px;
     height: fit-content;
     opacity: 0.9 !important;
@@ -653,24 +722,28 @@ body::-webkit-scrollbar-thumb{
     padding-bottom: .5em !important;
 }
 
-.owl-nav span{
+.owl-nav span {
     font-size: 40px;
-    color:var(--main-color);
-} 
+    color: var(--main-color);
+}
 
 
-.owl-next:hover ,.owl-prev:hover{
+.owl-next:hover,
+.owl-prev:hover {
     background-color: var(--main-color) !important;
     transition: all 50ms ease-in-out;
     opacity: 1 !important;
     box-shadow: 1px 1px 5px var(--box-shadow);
 }
 
-.owl-next:hover span ,.owl-prev:hover  span{
+.owl-next:hover span,
+.owl-prev:hover span {
     color: white !important;
 }
-.owl-next:active , .owl-prev:active{
-    transform: translate(0px , 1px);
+
+.owl-next:active,
+.owl-prev:active {
+    transform: translate(0px, 1px);
     box-shadow: none;
 }
 
@@ -679,258 +752,454 @@ body::-webkit-scrollbar-thumb{
 
 
 /***** footer *****/
-.footer{
+.footer {
     position: relative;
     overflow: hidden;
 }
-.footer .website-title , .footer .social-icons .fa{
-    color:var(--main-color) !important;
+
+.footer .website-title,
+.footer .social-icons .fa {
+    color: var(--main-color) !important;
 }
 
-.footer li{ 
+.footer li {
     padding: .5rem;
     list-style: none outside;
 }
 
-.footer ul{
-    padding-left:0px;
+.footer ul {
+    padding-left: 0px;
 }
-.footer li:hover{
+
+.footer li:hover {
     color: var(--main-color);
 }
 
-.footer .anim{
+.footer .anim {
     position: absolute;
-    filter:invert(100%) ;
+    filter: invert(100%);
     opacity: 0.3;
     z-index: 100;
     width: 100px;
 }
 
-.footer .cloud-1{
+.footer .cloud-1 {
     bottom: 50%;
-    animation: cloud 10s infinite forwards;
-}
-.footer .cloud-2{
-    animation: cloud 10s infinite reverse;
+    animation: cloud 30s linear infinite forwards;
 }
 
-.footer .ballon{
+.footer .cloud-2 {
+    animation: cloud 30s linear infinite reverse;
+}
+
+.footer .ballon {
     width: 200px;
-    animation: ballon 20s  infinite forwards ;
+    animation: ballon linear 30s infinite forwards;
 }
 
 
 @keyframes ballon {
-    0%{
-        top: 100%;
+    0% {
+        top: 110%;
     }
 
-    100%{
-        top: 0%;
+    100% {
+        top: -50%;
     }
 }
 
 @keyframes cloud {
-    0%{
-        left: 0%;
+    0% {
+        left: -10%;
     }
-    100%{
-        left: 100%;
+
+    100% {
+        left: 110%;
     }
 }
 
-.anim-holder{
+.anim-holder {
     overflow: hidden;
 }
 
-.form-control:focus{
+.form-control:focus , .form-check-input:focus  {
+    border-color: var(--main-color);
     box-shadow: 0 0 0 .25rem var(--main-color-50);
 }
+.form-check-input:checked {
+    background-color:var(--main-color);
+    border-color: var(--main-color);
+  }
 
-.list-1 li:hover .list-1-title{
+.list-1 li:hover .list-1-title {
     text-decoration: underline var(--main-color);
 }
+
 /***** End footer *****/
-@media screen and (width >= 768px){
-    .Header .carousel-item img{
-        height:500px;
+@media screen and (width >=768px) {
+    .Header .carousel-item img {
+        height: 500px;
         object-fit: cover;
     }
 }
 
 /***** page-country *****/
-.hero-image{
+.hero-image {
     position: relative;
     width: auto;
     height: 250px;
 }
 
 @media (max-width: 500px) {
-    .hero-image{
+    .hero-image {
         height: fit-content;
     }
 }
-.hero-image img{
+
+.hero-image img {
     width: 100%;
     height: 100%;
-    object-fit:cover;   
-    box-shadow:  0px 0px 200px rgb(0, 0, 0 , 0.9) inset;
+    object-fit: cover;
+    box-shadow: 0px 0px 200px rgb(0, 0, 0, 0.9) inset;
     border: none;
 }
 
-.hero-text-wrapper{
+.hero-text-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     margin: auto;
-    color:white;
+    color: white;
 }
 
-.hover-line-item:hover .hero-text{
+.hover-line-item:hover .hero-text {
     text-shadow: 1px 1px 10px black;
 }
 
-.country-gallery .carousel-item img{
+.country-gallery .carousel-item img {
     width: 300px;
     height: 500px;
     object-fit: cover;
 }
 
-.travelling-types .grid-wrapper{
+.travelling-types .grid-wrapper {
     display: grid;
     gap: 1rem;
     grid-template-areas: "Content1 Content3 Content4"
-                         "Content2 Content3 Content4";
+        "Content2 Content3 Content4";
     grid-template-columns: 1.3fr 1fr 1fr;
 }
 
-.travelling-types .grid-wrapper .grid-item{
+.travelling-types .grid-wrapper .grid-item {
     background-color: #FF9900;
-    background-size: 0% , cover;
+    background-size: 0%, cover;
     background-position: center;
-    
+
 }
-.travelling-types .grid-wrapper .grid-item:hover{
+
+.travelling-types .grid-wrapper .grid-item:hover {
     box-shadow: 1px 1px 10px var(--box-shadow);
-    background-size: cover , cover;
+    background-size: cover, cover;
 }
-.travelling-types .grid-wrapper .grid-item:nth-child(1){
-    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/hiking-mountains.jpg);
+
+.travelling-types .grid-wrapper .grid-item:nth-child(1) {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/hiking-mountains.jpg);
     grid-area: Content1;
 }
-.travelling-types .grid-wrapper .grid-item:nth-child(2){
-    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/urban-city-2.jpg);
+
+.travelling-types .grid-wrapper .grid-item:nth-child(2) {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/urban-city-2.jpg);
     grid-area: Content2;
 }
-.travelling-types .grid-wrapper .grid-item:nth-child(3){
-    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/people-walking.jpg);
+
+.travelling-types .grid-wrapper .grid-item:nth-child(3) {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/people-walking.jpg);
     grid-area: Content3;
 }
-.travelling-types .grid-wrapper .grid-item:nth-child(4){
-    background-image:  linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/greece-bulding.jpg);
+
+.travelling-types .grid-wrapper .grid-item:nth-child(4) {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/greece-bulding.jpg);
     grid-area: Content4;
     height: 30rem;
 }
 
 
 @media (max-width:1000px) {
-    .travelling-types .grid-wrapper{
+    .travelling-types .grid-wrapper {
         grid-template-areas: "Content1"
-                             "Content2"
-                             "Content3"
-                             "Content4";
+            "Content2"
+            "Content3"
+            "Content4";
         grid-template-columns: auto;
     }
 
-    .travelling-types .grid-wrapper .grid-item{
+    .travelling-types .grid-wrapper .grid-item {
         height: 20rem;
     }
 }
 
 
-.packages .package{
+.packages .package {
     background-color: #FF9900;
     width: 18rem;
-    height:20rem;
+    height: 20rem;
     position: relative;
     color: white;
-    background-size: 0% , cover;
+    background-size: 0%, cover;
     background-position: center;
 
 }
 
-.packages .package .package-inner{
+.packages .package .package-inner {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height:100%;
+    height: 100%;
 }
-.packages .text{
+
+.packages .text {
     text-shadow: 1px 1px 10px black;
 }
 
 
-.packages .package.one{
-    background-image: linear-gradient(to bottom, transparent , black) ,  url(./Images/Places/hotel-lobby.jpg);
-}
-.packages .package.two{
-    background-image: linear-gradient(to bottom, transparent , black) , url(./Images/Places/hotel-lobby-2.jpg);
-}
-.packages .package.three{
-    background-image: linear-gradient(to bottom, transparent , black) ,url(./Images/Places/usa-images/huper-by-joshua-earle-lWYUA42UmL8-unsplash.jpg);
+.packages .package.one {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/hotel-lobby.jpg);
 }
 
-.packages .package:hover{
-    box-shadow: 1px 1px 10px var(--box-shadow);
-    background-size: cover , cover;
+.packages .package.two {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/hotel-lobby-2.jpg);
 }
-.package .price{
+
+.packages .package.three {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/usa-images/huper-by-joshua-earle-lWYUA42UmL8-unsplash.jpg);
+}
+
+.packages .package:hover {
+    box-shadow: 1px 1px 10px var(--box-shadow);
+    background-size: cover, cover;
+}
+
+.package .price {
     color: white;
     transition: color 1s;
 }
-.stars{
+
+.stars {
     color: var(--main-color);
 }
 
 
-@media (hover:hover){
-    .packages .package:hover .package-content{
+@media (hover:hover) {
+    .packages .package:hover .package-content {
         margin-top: 40% !important;
         transition: all 1s;
     }
-    .package .package-content{
+
+    .package .package-content {
         position: absolute;
-        margin-top:  65% !important;
+        margin-top: 65% !important;
         transition: all 1s;
     }
-    
+
 }
 
 
-    .package .package-content{
-        position: absolute;
-        margin-top:  40%;
-        transition: all 1s;
-    }
+.package .package-content {
+    position: absolute;
+    margin-top: 40%;
+    transition: all 1s;
+}
 
 
-.packages .package:hover .price{
+.packages .package:hover .price {
     color: var(--main-color);
     transition: color 1s;
 }
 
 
-.package .badge{
+.package .badge {
     position: absolute;
     background-color: var(--main-color);
     left: 85%;
     top: -3%;
 }
 
-.package:hover .badge{
+.package:hover .badge {
     box-shadow: 1px 1px 10px var(--box-shadow);
 }
 
+.link a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
 /***** End page-country *****/
+
+/***** page-package *****/
+.package-title {
+    color: var(--main-color);
+}
+
+.package-header .tag-holder .badge {
+    background-color: var(--secondary-color) !important;
+}
+
+.stars .fa {
+    width: max-content;
+    height: min-content;
+    font-size: 1.3rem;
+}
+
+.mapouter,
+.gmap_canvas {
+    width: 100% !important;
+}
+
+.package-gallery .carousel.slide {
+    height: 100%;
+}
+
+.package-gallery .carousel-item img {
+    height: 30rem;
+    object-fit: cover;
+}
+
+
+.accordion .card {
+    margin: 1rem;
+    background-color: var(--background-color);
+    border: none;
+    border-bottom: 2px solid var(--main-color);
+
+}
+
+
+.accordion .card .card-header {
+    border: none;
+}
+
+.accordion .card .card-header .btn:focus {
+    box-shadow: none;
+}
+
+
+.popular-places .item.one {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/usa-images/grand\ canyon.jpg);
+}
+
+.popular-places .item.two {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/usa-images/honollulu.jpg);
+}
+
+.popular-places .item.three {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/usa-images/mavi.jpg);
+}
+
+.popular-places .item.four {
+    background-image: linear-gradient(to bottom, transparent, black), url(./Images/Places/usa-images/yellow\ stone\ park.jpg);
+}
+
+.popular-places .text-hover-line {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    width: 90%;
+    height: max-content;
+    overflow: auto;
+    background-color: var(--main-color-50);
+    opacity: 1;
+    overflow: hidden;
+}
+
+.loading-bg {
+    opacity: 0.5;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 100;
+}
+
+#body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.close-popupbutton {
+    position: absolute;
+    left: 90%;
+    padding-inline: .5rem;
+    margin: 2rem;
+    color: var(--main-color-50);
+    font-size: 2rem;
+    background-color: var(--background-color);
+    border: 0px solid black;
+    opacity: 0.5;
+}
+
+.close-popupbutton:active {
+    color: var(--main-color);
+}
+
+.popup .img-wrapper {
+    object-fit: cover;
+    height: 200%;
+}
+
+.popup .img-wrapper img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.places-popup-title {
+    margin: 1rem;
+    margin-left: 0rem;
+}
+
+/***** End page-package *****/
+
+
+/***** Booking *****/
+.heading .text-wrapper h1 {
+    margin: 1rem;
+    margin-bottom: 0rem;
+    text-shadow: none;
+}
+
+
+.animation-headshake{
+    animation: headShake 1s ease-in-out;
+    transition: border 0.5s ease-in-out;
+    border: rgba(250, 63, 63, 0.877) solid 2px !important;
+ }
+ 
+ .animation-headshake:not(:invalid){
+     transition: border 0.5s ease-in-out;
+     border: rgba(63, 250, 63, 0.877) solid 2px !important;
+ }
+ 
+ .form-wrapper:not(:hover) .submit-btn:not(.disabled){
+     animation: headShake 1s ease-in-out infinite;
+ }
+
+ .form-group{
+    margin-block: 1rem;
+ }
+
+/***** End Booking *****/
