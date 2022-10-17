@@ -220,9 +220,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.navbar-nav .nav-item:hover:not(.active):not(.button) {
+.navbar-nav .nav-item:hover:not(.active):not(.button) a{
     text-decoration: underline var(--main-color) 2px;
     font-weight: 600;
+    text-decoration-color: var(--main-color);
 
 }
 
@@ -1142,15 +1143,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .close-popupbutton {
-    position: absolute;
-    left: 90%;
-    padding-inline: .5rem;
-    margin: 2rem;
-    color: var(--main-color-50);
+    margin-inline: 2rem;
+    color:white;
     font-size: 2rem;
-    background-color: var(--background-color);
+    background-color: rgb(255, 255, 255 , 0);
     border: 0px solid black;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .close-popupbutton:active {
@@ -1172,6 +1170,7 @@ body::-webkit-scrollbar-thumb {
     margin-left: 0rem;
 }
 
+
 /***** End page-package *****/
 
 
@@ -1183,23 +1182,31 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.animation-headshake{
-    animation: headShake 1s ease-in-out;
-    transition: border 0.5s ease-in-out;
-    border: rgba(250, 63, 63, 0.877) solid 2px !important;
- }
- 
- .animation-headshake:not(:invalid){
-     transition: border 0.5s ease-in-out;
-     border: rgba(63, 250, 63, 0.877) solid 2px !important;
- }
- 
- .form-wrapper:not(:hover) .submit-btn:not(.disabled){
-     animation: headShake 1s ease-in-out infinite;
- }
-
  .form-group{
     margin-block: 1rem;
  }
+
+.form-group input , .form-group select , .form-group textarea{
+    border-radius: 0px !important;
+    border: none;
+    margin-inline: 2px;
+}
+
+
+.popup2{
+    display:none;
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50% , -50%);
+    width: 90%;
+    height: 90%;
+    z-index:200;
+    background-color: var(--main-color-50);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
 
 /***** End Booking *****/

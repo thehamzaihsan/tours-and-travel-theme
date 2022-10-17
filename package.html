@@ -24,8 +24,9 @@
     <link rel="stylesheet" href="style.css">
     <!-- JS -->
     <script defer src="js/app.js"></script>
-    <script src="./js/animation-on-scroll.js"></script>
-    <script src="./js/faq.js"></script>
+    <script defer src="./js/animation-on-scroll.js"></script>
+    <script defer src="./js/popup.js"></script>
+    <script defer src="./js/owl-carousel.js"></script>
 </head>
 
 <body id="body">
@@ -168,7 +169,7 @@
                     <h4 class="package-old-price mt-3 mb-3 text-decoration-line-through ps-1 text-black-50 ">$1500</h4>
                 </div>
 
-                <button class="button-simple"><a href="./booking.html" class="text-decoration-none text-black">Book now</a></button>
+                <button class="button-simple"><a   data-target = "popup2"class="text-decoration-none text-black popupbutton">Book now</a></button>
             </div>
         </div>
     </div>
@@ -365,12 +366,14 @@
     </div>
 
     <div class="popup" id="popup1">
-        <button class="close-popupbutton" data-target = "popup1"><i class="fa fa-close" aria-hidden="true"></i></button>
         <div class="row">
             <div class="col-lg-6 img-wrapper "><img src="./Images/Places/usa-images/grand canyon.jpg" alt=""></div>
             <div class="col-lg-6 d-flex justify-content-around flex-column">
                 <div>
-                    <h1 class="places-popup-title">Utah</h1>
+                    <div class="d-flex justify-content-between">
+                        <h1 class="places-popup-title">Utah</h1>
+                        <button class="close-popupbutton" data-target = "popup1"><i class="fa fa-close" aria-hidden="true"></i></button>
+                    </div>
                     <p  class="ms-1 me-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis commodi, deleniti velit quis sunt laboriosam minima pariatur ipsam inventore et provident facere debitis quasi. Quidem vero ad in praesentium veniam amet alias cupiditate dolorum. Sapiente tempore repellendus sequi error similique?</p>
                 </div>
 
@@ -382,7 +385,82 @@
         </div>
     </div>
 
+    <div class="popup2" id="popup2"><div class="container">
+         <div class="d-flex justify-content-between">
+            <div class="section-heading-wrapper">
+                <div class="line"></div>
+                <h1>Booking</h1>
+            </div>
+             <button class="close-popupbutton" data-target = "popup2"><i class="fa fa-close" aria-hidden="true"></i></button>
 
+         </div>
+            <div class="form">
+        
+                    <div class="form-wrapper ">
+                        <form name="contact-form" >
+                            <div class="form-group">
+                                <div class="d-flex justify-content-evenly">
+                                    <input type="text" class="form-control mt-1 mb-1 p-3 me-1  form-name" placeholder="Name" name="name" required>
+                                    <input type="email" class="form-control mt-1 mb-1 p-3 ms-1  form-email " placeholder="example@mail.com" name="password" required>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex flex-row">
+                                <select class="form-control mt-1 mb-1 p-3 me-1  w-25  " name="dropdown" required>
+                                    <option value="">Country code</option>
+                                    <option value="1">00</option>
+                                    <option value="2">01</option>
+                                    <option value="3">92</option>
+                                </select>
+                                <input type="number" class="form-control phone-number mt-1 mb-1 p-3 me-1" id="phone-number" placeholder="123456">
+                            </div>
+        
+                            <div class="form-group">
+                                <select class="form-control mt-1 mb-1  p-3  " name="dropdown" required>
+                                    <option value="">Country</option>
+                                    <option value="1">Pakistan</option>
+                                    <option value="2">USA</option>
+                                    <option value="3">Dubai</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control mt-1 mb-1  p-3  " name="dropdown" required>
+                                    <option value="">City</option>
+                                    <option value="1">Islamabad</option>
+                                    <option value="2">Dubai</option>
+                                    <option value="3">New York</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea  class="form-control mt-2 mb-1  p-3 " cols="10" rows="3" placeholder="Address" id="inputarea" name="inputarea" required></textarea>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="date" class="p-2">Input Date</label>
+                                <input type="date" name="date" id="date" class="form-control">
+        
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="booking-time" class="p-2">Enter Booking time</label>
+                                <input type="time" name="time" id="time" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea  class="form-control mt-2 mb-1  p-3 " cols="30" rows="7" placeholder="Message" id="inputarea" name="inputarea" required></textarea>
+                                <p class="text-black " id="wordcount" ></p>
+                            </div>
+                            <div class="form-group mt-2 mb-1 ">
+                                <div class="d-flex">
+                                    <input class="form-check-input " type="checkbox" value="" id="Check1"  name="check" required >
+                                    <label class="form-check-label ps-1 form-tick " for="Check1" >By submitting, i'm agreed to the Terms & Conditons</label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center"><button type="submit" class="button-simple ms-0 m-3 p-3 w-50 submit-btn" >Submit</button></div>
+                        </form>
+                    </div>
+        
+               </div>
+        
+    </div></div>
 
     <div class="loading-bg" id="loading-bg">
     </div>
