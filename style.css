@@ -26,7 +26,8 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 0.25rem;
+    width: 0.50rem;
+
 }
 
 body::-webkit-scrollbar-track {
@@ -35,6 +36,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background-color: var(--main-color);
+
 }
 
 /***** Animation on load *****/
@@ -198,6 +200,14 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--main-color);
 }
 
+.banner p , .fa{
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+.link{
+    cursor: pointer;
+    
+}
 
 
 .social-icons .fa {
@@ -210,7 +220,7 @@ body::-webkit-scrollbar-thumb {
 
 /***** Navbar *****/
 
-.navbar-brand>img {
+.navbar-brand img {
     width: 6rem;
 }
 
@@ -853,7 +863,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 500px) {
     .hero-image {
-        height: fit-content;
+        height: max-content;
     }
 }
 
@@ -1030,6 +1040,10 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 1px 1px 10px var(--box-shadow);
 }
 
+.badge{
+    background-color: var(--main-color);
+    color: white;
+}
 .link a {
     color: white;
     text-decoration: none;
@@ -1210,3 +1224,143 @@ body::-webkit-scrollbar-thumb {
 
 
 /***** End Booking *****/
+
+/***** search page *****/
+.search-box-wrapper .form-control{
+    margin:2px;
+    height: 4rem;
+    border-right: rgb(128, 128, 128 , 0.5) solid 1px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 90% ;
+
+}
+
+.search-box-wrapper .form-control:nth-child(1){
+    background-image: url(./Images/Flaticons/location.png);
+}
+
+.search-box-wrapper .form-control:nth-child(2){
+    background-image: url(./Images/Flaticons/calendar.png);
+}
+
+.search-box-wrapper .form-control:nth-child(3){
+    background-image: url(./Images/Flaticons/user.png);
+}
+
+.search-box-wrapper .form-control:focus{
+    border-color:none;
+    box-shadow: none;
+  }
+
+.search-box-wrapper{
+    background-color: white;
+}
+.search-box-wrapper button{
+    margin:2px;
+    height: 4rem;
+    width: 10rem;
+}
+
+.search-box-wrapper select[name = "tour-type"]{
+    border-right: none;
+}
+
+.badge{
+    background-color: var(--main-color);
+    color: white;
+    width: max-content;
+}
+
+.badge .fa{
+    font-size: medium;
+    padding-inline: 2px;
+    margin-bottom: none ;
+    color: white;
+}
+
+.badge button{
+    background-color: var(--main-color);
+    border:solid 0px;
+}
+
+.badge a{
+    text-decoration: none;
+}
+
+
+
+.packages-list .package{
+    margin-block: 2rem;
+    height: 20rem;
+    box-shadow: 1px 1px 20px var(--box-shadow);
+    overflow: hidden;
+}
+.packages-list .package .img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 20rem;
+    padding: 0px;
+    
+}
+
+.packages-list .package .row{
+    height: 20rem;
+}
+@media (max-width:768px){
+    .search-box-wrapper .form-control{
+        border: none;
+        width: 15rem;
+    }
+    .search-box-wrapper button{
+        width: 15rem;
+    }
+
+}
+@media (max-width:1000px){
+    .packages-list .package .img-wrapper img{
+        height: 10rem;
+    }
+    .packages-list .package{
+        height: max-content;
+    }
+
+    .packages-list .package .row{
+        height: max-content;
+    }
+    .search-package-content{
+       text-align: center;
+    
+    }
+    
+    .search-package-rating{
+        align-self: center;
+    }
+
+    .packages-list .package button{
+      width: 50%;
+    }
+    
+}
+
+.search-package-content{
+    padding: 1rem;
+
+}
+.packages-list .package button , .packages-list .package .price{
+    margin-bottom: 3rem;
+}
+
+
+.packages-list .package .img-wrapper {
+    object-fit: cover;
+    padding: 0px;
+}
+.package-price{
+    color: var(--main-color);
+}
+
+.hero-image.package-search{
+    height: 400px;
+}
+/***** End search page *****/
