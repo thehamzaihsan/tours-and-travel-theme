@@ -1438,7 +1438,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contact .form-control{
-    border: 1px gray solid;
+    border: 1px var(--main-color) solid;
 }
 
 /***** End contact *****/
