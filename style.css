@@ -599,7 +599,11 @@ body::-webkit-scrollbar-thumb {
     height: inherit;
 }
 
-.points .offering-points li {
+.offering-points{
+    padding-inline-start: 0px;
+}
+
+.offering-points li {
     list-style-type: none;
     margin-top: .5em;
     margin-bottom: .5em;
@@ -610,15 +614,16 @@ body::-webkit-scrollbar-thumb {
     flex-direction: row;
 }
 
-.points .offering-points li:hover {
+
+.offering-points li:hover {
     color: var(--main-color);
 }
 
-.points .offering-points .fa {
+ .offering-points .fa {
     color: var(--main-color);
     padding: 1rem;
     padding-inline: .5rem;
-
+    padding-inline-start:0px;
 
 }
 
@@ -1442,3 +1447,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 /***** End contact *****/
+
+/***** about page *****/
+.person img{
+    width: 10rem;
+    height:10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.person .person-name{
+    margin-top: 2rem !important;
+}
+.person:hover .person-name{
+    color: var(--main-color);
+}
+/***** End about page *****/
