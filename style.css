@@ -208,10 +208,6 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
     margin-bottom: 0px;
 }
-.link{
-    cursor: pointer;
-    
-}
 
 
 .social-icons .fa {
@@ -219,6 +215,20 @@ body::-webkit-scrollbar-thumb {
     text-decoration: none;
     margin-inline: .5rem;
 }
+.banner .fa{
+    background-color: black;
+    padding: 4px;
+    color: var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    padding-inline:8px;
+}
+.link{
+    cursor: pointer;
+    
+}
+
+
 
 /***** End Banner *****/
 
@@ -883,9 +893,12 @@ body::-webkit-scrollbar-thumb {
 /***** page-country *****/
 .hero-image {
     position: relative;
-    width: auto;
+    width:100vw;
     height: 250px;
+    z-index: 10;
+    display: inline-block;
 }
+
 
 @media (max-width: 500px) {
     .hero-image {
@@ -897,8 +910,9 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0px 0px 200px rgb(0, 0, 0, 0.9) inset;
     border: none;
+    z-index: 5;
+    display: block;
 }
 
 .hero-text-wrapper {
@@ -1409,3 +1423,22 @@ body::-webkit-scrollbar-thumb {
     height: 400px;
 }
 /***** End search page *****/
+
+/***** contact *****/
+.contact-info .fa{
+    font-size: 30px;
+    color: var(--main-color);
+    margin-inline-end: 1rem;
+}
+.contact-info .fa-mobile-phone{
+    font-size: 40px;
+}
+.contact-info .info{
+    margin-block:1rem ;
+}
+
+.contact .form-control{
+    border: 1px gray solid;
+}
+
+/***** End contact *****/
