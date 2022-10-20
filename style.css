@@ -23,7 +23,11 @@ body {
     background-color: var(--background-color);
     font-family: 'Montserrat';
     overflow-x: hidden;
+    width:100vw;
+    height: 100vh;
+    margin:0;
 }
+
 
 body::-webkit-scrollbar {
     width: 0.50rem;
@@ -229,6 +233,11 @@ body::-webkit-scrollbar-thumb {
     font-weight: 600;
 }
 
+.navbar-nav .active a{
+    text-decoration: none;
+    color: var(--main-color) !important;
+    font-weight: 600;
+}
 
 .navbar-nav .nav-item:hover:not(.active):not(.button) a{
     text-decoration: underline var(--main-color) 2px;
@@ -275,6 +284,15 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
+
+@media (max-width:500px) {
+
+    .testimonials .carousel-inner img,
+    .Header .carousel-item img {
+        height: 600px;
+    }
+
+}
 .carousel-caption {
     text-shadow: 1px 1px 10px black;
 }
@@ -324,13 +342,17 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.grid.wrapper a{
+    display: block;
+}
+
 .grid.wrapper .grid-item {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-blend-mode: normal;
-
+    cursor: pointer;
 }
 
 .grid.wrapper .grid-item .text-hover-line {
@@ -680,12 +702,13 @@ body::-webkit-scrollbar-thumb {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-
+    cursor: pointer;
 }
 
 .owl-one .item .text-wrapper {
     margin: auto 0;
     padding: 1rem;
+    
 }
 
 .owl-one .item:hover {
@@ -768,6 +791,9 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 }
 
+.website-title{
+    cursor: pointer;
+}
 .footer .website-title,
 .footer .social-icons .fa {
     color: var(--main-color) !important;
@@ -959,7 +985,7 @@ body::-webkit-scrollbar-thumb {
     color: white;
     background-size: 0%, cover;
     background-position: center;
-
+    cursor: pointer;
 }
 
 .packages .package .package-inner {
@@ -972,6 +998,7 @@ body::-webkit-scrollbar-thumb {
 .packages .text {
     text-shadow: 1px 1px 10px black;
 }
+
 
 
 .packages .package.one {
@@ -1049,12 +1076,15 @@ body::-webkit-scrollbar-thumb {
     text-decoration: none;
 }
 
-
+.grid-item{
+    cursor: pointer;
+}
 
 
 /***** End page-country *****/
 
 /***** page-package *****/
+
 .package-title {
     color: var(--main-color);
 }
@@ -1229,11 +1259,26 @@ body::-webkit-scrollbar-thumb {
 .search-box-wrapper .form-control{
     margin:2px;
     height: 4rem;
+    border: none;
     border-right: rgb(128, 128, 128 , 0.5) solid 1px;
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 90% ;
+    
+}
+.range-label{
+    visibility:hidden !important;
+}
 
+.range-picker{
+    width: 80%;
+}
+
+.process , .select-label{
+    background-color: var(--main-color) !important;
+}
+.select-label::after{
+    border-top-color: var(--main-color) !important  ;
 }
 
 .search-box-wrapper .form-control:nth-child(1){
@@ -1241,7 +1286,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .search-box-wrapper .form-control:nth-child(2){
-    background-image: url(./Images/Flaticons/calendar.png);
+    background-image: url(./Images/Flaticons/dollar-sign.png);
 }
 
 .search-box-wrapper .form-control:nth-child(3){

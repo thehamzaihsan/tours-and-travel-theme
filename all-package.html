@@ -29,27 +29,38 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             />
+        <!-- Range picker css  -->
+        <link rel="stylesheet" href="./external-libs/range-picker.min.css" type="text/css" charset="utf-8" />
+        <!-- Range picker js -->
+        <script src="./external-libs/range_picker.min.js" type="text/javascript" charset="utf-8"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="style.css">
         <!-- JS -->
         <script defer src="js/app.js"></script>
         <script defer src="./js/animation-on-scroll.js"></script>
-        <script defer src="./js/owl-carousel.js"></script>
+        <script defer src="rangepicker.js"></script>
+
     </head>
 
 <body>
     
-
-    <div class="banner">
+    <div class="banner d-none d-sm-block" id="top">
         <div class="container p-1 ">
-            <div class="d-flex justify-content-between ps-3 pe-3 ">
+            <div class="d-flex justify-content-between ps-md-3 pe-md-3 flex-column flex-md-row ">
                 <div class="d-flex">
                     <div class="alert_icon ps-2 pe-3 ">
                         <i class="fa fa-phone "></i>
                     </div>
-                    <div><strong>Contact: </strong>34567856789</div>
+                    <p><strong>Contact: </strong>34567856789</p>
+                    <div class="d-flex ms-1">
+                        <div class="alert_icon ps-2 pe-3 ">
+                           <i class="fa fa-mail-bulk   "></i>
+                        </div>
+                        <p><strong>Mail: </strong>mail@mail.com</p>
+                    </div>
                 </div>
-                <div class="social-icons">
+
+                <div class="social-icons text-center">
                     <a href="#" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#" class="fa fa-twitter"></a>
@@ -57,13 +68,12 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container navigation">
         <nav class="navbar navbar-expand-lg navbar-light">
-
-            <div class="navbar-brand mt-lg-0  d-flex ">
-                <img src="./Images/Flaticons/tours.png" alt="" >
-                <h2 class=" d-sm-block d-none m-4"><a href="./index.html" class="link">Tours and Travel</a></h2>
+            <div class="navbar-brand mt-lg-0 mt-0 d-flex ">
+                <a href="./index.html"><img src="./Images/Flaticons/tours.png" alt=""></a>
+                <h2 class="m-3 d-sm-block d-none link "><a href="./index.html" class="text-black">Tours and Travel</a></h2>
             </div>
             <button type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" class="Navbartoggler border-0
@@ -71,10 +81,9 @@
                 aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
-
             <div class="collapse navbar-collapse ms-4" id="navbarNav">
                 <ul class="navbar-nav ">
-                    <li class="nav-item ms-3 "><a href="index.html" class="
+                    <li class="nav-item ms-3 "><a href="./index.html" class="
                             nav-link text-black ">Home</a></li>
                     <li class="nav-item ms-3 dropdown">
                         <a href="#" class=" nav-link text-black
@@ -83,28 +92,30 @@
                             aria-expanded="false">Destination</a>
                         <ul class="dropdown-menu"
                             aria-labelledby="navbarDropdown">
-                            <li><a href="#" class="dropdown-item">About</a></li>
-                            <li><a href="#" class="dropdown-item">Services</a></li>
-                            <li><a href="#" class="dropdown-item">Search</a></li>
+                            <li><a href="./country.html" class="dropdown-item">USA</a></li>
+                            <li><a href="#" class="dropdown-item">Europe</a></li>
+                            <li><a href="#" class="dropdown-item">Asia</a></li>
+                            <li><a href="#" class="dropdown-item">Americas</a></li>
+                            <li><a href="#" class="dropdown-item">Asia</a></li>
+                            <li><a href="#" class="dropdown-item">Africa</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ms-3 "><a href="#" class=" nav-link
-                            text-black ">Pricing</a></li>
-                    <li class="nav-item ms-3"><a href="#" class=" nav-link
-                            text-black ">Contact</a></li>
-                    <li class="nav-item ms-3"><a href="#" class=" nav-link
-                            text-black ">About us</a></li>
+                    <li class="nav-item ms-3"><a href="./services.html" class=" nav-link
+                            text-black ">Services</a></li>
+                            <li class="nav-item ms-3 active pb-0 link"><a  href="./all-package.html" class=" nav-link
+                                text-black ">Packages</a></li>
+                                <li class="nav-item ms-3"><a href="./about-us.html" class=" nav-link
+                                    text-black ">About us</a></li>
                     <li>
-                        <button class="nav-item button-bordered button p-2 ms-3
-                            d-lg-block d-none "> Book
-                            now</button>
+                        <a href="./contact.html" class="text-decoration-none">
+                            <button class="nav-item button-bordered button p-2 ms-3
+                                d-lg-block d-none" >Contact us</button>
+                        </a>
                     </li>
                 </ul>
             </div>
-
         </nav>
     </div>
-
 
     <div class="hero-image package-search hover-line-item">
         <img src="./Images/Places/Asia-thai-lake.jpg" alt="">
@@ -120,7 +131,7 @@
                             <option value="4">North America</option>
                             <option value="5">South America</option>
                         </select>
-                        <input type="date" name="tour-date" id="input\u\1-\u\1" class="form-control" value="" required="required" min="2022-10-17">
+                        <div id="price-range" class="form-control"></div>
                         <select class="form-control form-select" name="tour-type" id="search-tour-type" required>
                            
                                 <option value="1">All Adventure?</option>
@@ -185,7 +196,7 @@
                                 
 
                                 <div class="d-flex justify-content-lg-between  align-items-center justify-content-center flex-column-reverse flex-lg-row">
-                                    <button class="button-simple"><a   class="text-decoration-none text-black ">About Package</a></button>
+                                    <button class="button-simple" onclick="location.href = './package.html'"><a   class="text-decoration-none text-black ">About Package</a></button>
                                     <div class="d-flex me-lg-3 price">
                                         <h1 class="package-price mt-3 mb-3">$1200</h1>
                                         <h4 class="package-old-price mt-3 mb-3 text-decoration-line-through ps-1 text-black-50 ">$1500</h4>
@@ -222,7 +233,7 @@
                                 
 
                                 <div class="d-flex justify-content-lg-between  align-items-center justify-content-center flex-column-reverse flex-lg-row">
-                                    <button class="button-simple"><a   class="text-decoration-none text-black ">About Package</a></button>
+                                    <button class="button-simple" onclick="location.href = './package.html'"><a   class="text-decoration-none text-black ">About Package</a></button>
                                     <div class="d-flex me-lg-3 price">
                                         <h1 class="package-price mt-3 mb-3">$1350</h1>
                                         <h4 class="package-old-price mt-3 mb-3 text-decoration-line-through ps-1 text-black-50 ">$2500</h4>
@@ -259,7 +270,7 @@
 
                                 
                                 <div class="d-flex justify-content-lg-between  align-items-center justify-content-center flex-column-reverse flex-lg-row">
-                                    <button class="button-simple"><a   class="text-decoration-none text-black ">About Package</a></button>
+                                    <button class="button-simple" onclick="location.href = './package.html'"><a   class="text-decoration-none text-black ">About Package</a></button>
                                     <div class="d-flex me-lg-3 price">
                                         <h1 class="package-price mt-3 mb-3">$1600</h1>
                                         <h4 class="package-old-price mt-3 mb-3 text-decoration-line-through ps-1 text-black-50 ">$2000</h4>
@@ -325,5 +336,6 @@
         </div>
     </div>
 
+  
 </body>
 </html>
